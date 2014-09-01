@@ -1,0 +1,23 @@
+{
+  "name": "angular-sharing",
+  "version": "0.0.1",
+  "description": "ng",
+  "main": "index.html",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mo-group/angular-sharing.git"
+  },
+  "private": true,
+  "keywords": [
+    "ng"
+  ],
+  "author": "Leo Chen-Tsu_Lin <lin19890808@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mo-group/angular-sharing/issues"
+  },
+  "homepage": "https://github.com/mo-group/angular-sharing"
+}

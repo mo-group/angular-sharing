@@ -1,0 +1,26 @@
+{
+  "name": "angular-sharing",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mo-group/angular-sharing",
+  "authors": [
+    "Leo Chen-Tsu_Lin <lin19890808@gmail.com>"
+  ],
+  "description": "ng",
+  "main": "index.html",
+  "keywords": [
+    "ng"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "highlight": "~7.0.1",
+    "ace": "~1.1.6"
+  }
+}
