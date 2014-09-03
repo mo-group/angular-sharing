@@ -24,6 +24,7 @@
     "ace": "~1.1.6",
     "angular": "~1.2.23",
     "angular-route": "~1.2.23",
-    "semantic-ui": "~0.19.0"
+    "semantic-ui": "~0.19.0",
+    "mousetrap": "~1.4.6"
   }
 }
