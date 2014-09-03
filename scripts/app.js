@@ -12,9 +12,9 @@ var DataBindingController = require('./controllers/DataBindingController');
 var ServiceController     = require('./controllers/ServiceController');
 var DiController          = require('./controllers/DiController');
 
-console.log(angular);
 
 angular.module('app.sharing', [ 'ngRoute' ])
+    .config(Log)
     .config(Route)
     .controller('MainController', MainController)
     .controller('FrontMvcController', FrontMvcController)

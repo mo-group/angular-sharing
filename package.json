@@ -27,5 +27,8 @@
     "deglobalify": "^0.2.0",
     "es6ify": "^1.3.0",
     "debowerify": "^0.8.1"
+  },
+  "dependencies": {
+    "highlight.js": "^8.2.0"
   }
 }
