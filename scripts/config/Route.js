@@ -1,14 +1,3 @@
-var MainController = require('../controllers/MainController');
-var FrontMvcController = require('../controllers/FrontMvcController');
-var SpaController = require('../controllers/SpaController');
-var FrameworkController = require('../controllers/FrameworkController');
-var ProsConsController = require('../controllers/ProsConsController');
-var DataBindingController = require('../controllers/DataBindingController');
-var ServiceController = require('../controllers/ServiceController');
-var DiController = require('../controllers/DiController');
-
-
-
 
 
 var Route = function($routeProvider, $locationProvider) {
@@ -17,32 +6,36 @@ var Route = function($routeProvider, $locationProvider) {
 
     $routeProvider
         .when('/', {
-            templateUrl: 'main.html',
+            templateUrl: templateDir + 'main.html',
             controller: 'MainController'
         })
         .when('/front-mvc', {
-            templateUrl: 'front-mvc.html',
+            templateUrl: templateDir + 'front-mvc.html',
             controller: 'FrontMvcController'
         })
         .when('/spa', {
-            templateUrl: 'spa.html',
+            templateUrl: templateDir + 'spa.html',
             controller: 'SpaController'
         })
         .when('/framework', {
-            templateUrl: 'framework.html',
+            templateUrl: templateDir + 'framework.html',
             controller: 'FrameworkController'
         })
         .when('/pros-n-cons', {
-            templateUrl: 'route.html',
-            controller: 'RouteCtrl'
+            templateUrl: templateDir + 'pros-n-cons.html',
+            controller: 'ProsConsController'
         })
         .when('/data-binding', {
-            templateUrl: 'route.html',
-            controller: 'RouteCtrl'
+            templateUrl: templateDir + 'data-binding.html',
+            controller: 'DataBindingController'
         })
-        .when('/route', {
-            templateUrl: 'route.html',
-            controller: 'RouteCtrl'
+        .when('/service', {
+            templateUrl: templateDir + 'service.html',
+            controller: 'ServiceController'
+        })
+        .when('/di', {
+            templateUrl: templateDir + 'di.html',
+            controller: 'DiController'
         })
         .otherwise({ redirectTo: '/' })
 
