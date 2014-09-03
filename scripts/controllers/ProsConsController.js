@@ -1,8 +1,10 @@
 'use strict';
 
-var ProsConsController = function() {
+var mousetrap = require('mousetrap');
+
+var ProsConsController = function($log) {
 
 
 };
 
-module.exports = [ ProsConsController ];
+module.exports = [ '$log', ProsConsController ];

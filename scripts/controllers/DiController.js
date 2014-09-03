@@ -1,8 +1,10 @@
 'use strict';
 
-var DiController = function() {
+var mousetrap = require('mousetrap');
+
+var DiController = function($log) {
 
 
 };
 
-module.exports = [ DiController ];
+module.exports = [ '$log', DiController ];

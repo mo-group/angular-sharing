@@ -2,15 +2,15 @@
 
 require('angular');
 require('angular-route');
-var Route = require('./config/Route');
-var MainController = require('./controllers/MainController');
-var FrontMvcController = require('./controllers/FrontMvcController');
-var SpaController = require('./controllers/SpaController');
-var FrameworkController = require('./controllers/FrameworkController');
-var ProsConsController = require('./controllers/ProsConsController');
+var Route                 = require('./config/Route');
+var MainController        = require('./controllers/MainController');
+var FrontMvcController    = require('./controllers/FrontMvcController');
+var SpaController         = require('./controllers/SpaController');
+var FrameworkController   = require('./controllers/FrameworkController');
+var ProsConsController    = require('./controllers/ProsConsController');
 var DataBindingController = require('./controllers/DataBindingController');
-var ServiceController = require('./controllers/ServiceController');
-var DiController = require('./controllers/DiController');
+var ServiceController     = require('./controllers/ServiceController');
+var DiController          = require('./controllers/DiController');
 
 console.log(angular);
 

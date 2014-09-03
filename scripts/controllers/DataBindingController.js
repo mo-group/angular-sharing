@@ -1,9 +1,10 @@
 'use strict';
 
-require('highlight');
+var hljs = require('highlight');
+var mousetrap = require('mousetrap');
 
 
-var DataBindingController = function($scope) {
+var DataBindingController = function($log, $scope) {
 
     hljs.initHighlightingOnLoad();
 
@@ -12,4 +13,4 @@ var DataBindingController = function($scope) {
 
 };
 
-module.exports = [ '$scope', DataBindingController ];
+module.exports = [ '$log', '$scope', DataBindingController ];

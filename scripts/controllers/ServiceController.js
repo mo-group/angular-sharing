@@ -1,8 +1,10 @@
 'use strict';
 
-var ServiceController = function() {
+var mousetrap = require('mousetrap');
+
+var ServiceController = function($log) {
 
 
 };
 
-module.exports = [ ServiceController ];
+module.exports = [ '$log', ServiceController ];

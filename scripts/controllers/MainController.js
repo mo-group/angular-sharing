@@ -1,8 +1,10 @@
 'use strict';
 
-var MainController = function() {
+var mousetrap = require('mousetrap');
+
+var MainController = function($log) {
 
 
 };
 
-module.exports = [ MainController ];
+module.exports = [ '$log', MainController ];

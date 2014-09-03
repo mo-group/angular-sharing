@@ -1,12 +1,12 @@
 'use strict';
 
-require('highlight');
+var hljs = require('highlight');
+var mousetrap = require('mousetrap');
 
-
-var SpaController = function() {
+var SpaController = function($log) {
 
     hljs.initHighlightingOnLoad();
 
 };
 
-module.exports = [ SpaController ];
+module.exports = [ '$log', SpaController ];

@@ -1,4 +1,4 @@
-
+'use strict';
 
 var Route = function($routeProvider, $locationProvider) {
 
@@ -37,8 +37,8 @@ var Route = function($routeProvider, $locationProvider) {
             templateUrl: templateDir + 'di.html',
             controller: 'DiController'
         })
-        .otherwise({ redirectTo: '/' })
+        .otherwise({ redirectTo: '/' });
 
 };
 
-module.exports = Route;
+module.exports = [ '$routeProvider', '$locationProvider', Route ];

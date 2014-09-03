@@ -1,8 +1,10 @@
 'use strict';
 
-var FrameworkController = function() {
+var mousetrap = require('mousetrap');
+
+var FrameworkController = function($log) {
 
 
 };
 
-module.exports = [ FrameworkController ];
+module.exports = [ '$log', FrameworkController ];

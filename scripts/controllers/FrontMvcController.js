@@ -1,8 +1,10 @@
 'use strict';
 
-var FrontMvcController = function() {
+var mousetrap = require('mousetrap');
+
+var FrontMvcController = function($log) {
 
 
 };
 
-module.exports = [ FrontMvcController ];
+module.exports = [ '$log', FrontMvcController ];
