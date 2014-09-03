@@ -4,7 +4,8 @@
   "description": "ng",
   "main": "index.html",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "browserify -t debowerify scripts/app.js -o bundle.js"
   },
   "repository": {
     "type": "git",

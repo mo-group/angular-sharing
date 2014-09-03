@@ -1,3 +1,5 @@
+'use strict';
+
 require('angular');
 require('angular-route');
 var Route = require('./config/Route');

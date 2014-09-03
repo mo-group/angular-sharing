@@ -1,3 +1,5 @@
+'use strict';
+
 var ServiceController = function() {
 
 
