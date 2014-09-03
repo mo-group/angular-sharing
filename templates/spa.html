@@ -1,1 +1,45 @@
 <h2>SPA (Single Page Application)</h2>
+
+<h4>Web 的進化</h4>
+<p>技術進步所以可以提供類似桌面應用程式的流暢體驗。</p>
+<p>各種強大的 JavaScript 雨後春筍般湧出。</p>
+<p>瀏覽器跟 HTML5 規範符合 SPA 走向</p>
+
+<h4>模組化</h4>
+<ul>
+    <li>Global
+        <pre><code>// jquery.js
+// ..
+var $ = jQuery;
+
+// app.js
+        </code></pre>
+    </li>
+    <li>AMD: RequireJS
+        <pre><code>// jquery.js
+// ..
+define('jquery', jQuery);
+
+// app.js
+require('jquery', function() { // .. });
+        </code></pre>
+    </li>
+    <li>Common: NodeJS
+        <pre><code>// jquery.js
+// ..
+module.exports = jQuery;
+
+// app.js
+var $ = require('jquery');
+        </code></pre>
+    </li>
+    <li>ES6
+        <pre><code>// jquery.js
+// ..
+export default jQuery;
+
+// app.js
+import $ from 'jquery';
+        </code></pre>
+    </li>
+</ul>
