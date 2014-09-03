@@ -2,6 +2,7 @@
 
 require('angular');
 require('angular-route');
+var Log                   = require('./config/Log');
 var Route                 = require('./config/Route');
 var MainController        = require('./controllers/MainController');
 var FrontMvcController    = require('./controllers/FrontMvcController');
