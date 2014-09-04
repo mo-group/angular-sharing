@@ -7969,6 +7969,10 @@ var Route = function($routeProvider, $locationProvider) {
             templateUrl: templateDir + 'template.html',
             pageIndex: 10
         })
+        .when('/resource', {
+            templateUrl: templateDir + 'resource.html',
+            pageIndex: 11
+        })
         .otherwise({ redirectTo: '/' });
 
 };
@@ -8053,7 +8057,7 @@ var PageController = function($log, $route, $location) {
     };
 
 
-    Mousetrap.bind('left ', toPrevPage);
+    Mousetrap.bind('left' , toPrevPage);
     Mousetrap.bind('right', toNextPage);
 };
 
