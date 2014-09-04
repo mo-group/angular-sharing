@@ -8,7 +8,7 @@
 <h4>模組化</h4>
 <ul>
     <li>Global
-        <pre><code>// jquery.js
+        <pre><code class="javascript">// jquery.js
 // ..
 var $ = jQuery;
 
@@ -16,7 +16,7 @@ var $ = jQuery;
         </code></pre>
     </li>
     <li>AMD: RequireJS
-        <pre><code>// jquery.js
+        <pre><code class="javascript">// jquery.js
 // ..
 define('jquery', jQuery);
 
@@ -25,7 +25,7 @@ require('jquery', function() { // .. });
         </code></pre>
     </li>
     <li>Common: NodeJS
-        <pre><code>// jquery.js
+        <pre><code class="javascript">// jquery.js
 // ..
 module.exports = jQuery;
 
@@ -34,7 +34,7 @@ var $ = require('jquery');
         </code></pre>
     </li>
     <li>ES6
-        <pre><code>// jquery.js
+        <pre><code class="javascript">// jquery.js
 // ..
 export default jQuery;
 

@@ -7868,8 +7868,13 @@ module.exports = function(hljs) {
 
 require("./../vendor/angular/angular.js");
 require("./../vendor/angular-route/angular-route.js");
+
 var Log                   = require('./config/Log');
 var Route                 = require('./config/Route');
+
+var snippet               = require('./directives/snippet');
+
+var PageController        = require('./controllers/PageController');
 var MainController        = require('./controllers/MainController');
 var FrontMvcController    = require('./controllers/FrontMvcController');
 var SpaController         = require('./controllers/SpaController');
@@ -7883,6 +7888,8 @@ var DiController          = require('./controllers/DiController');
 angular.module('app.sharing', [ 'ngRoute' ])
     .config(Log)
     .config(Route)
+    .directive('snippet', snippet)
+    .controller('PageController', PageController)
     .controller('MainController', MainController)
     .controller('FrontMvcController', FrontMvcController)
     .controller('SpaController', SpaController)
@@ -7892,7 +7899,7 @@ angular.module('app.sharing', [ 'ngRoute' ])
     .controller('ServiceController', ServiceController)
     .controller('DiController', DiController);
 
-},{"./../vendor/angular-route/angular-route.js":106,"./../vendor/angular/angular.js":107,"./config/Log":96,"./config/Route":97,"./controllers/DataBindingController":98,"./controllers/DiController":99,"./controllers/FrameworkController":100,"./controllers/FrontMvcController":101,"./controllers/MainController":102,"./controllers/ProsConsController":103,"./controllers/ServiceController":104,"./controllers/SpaController":105}],96:[function(require,module,exports){
+},{"./../vendor/angular-route/angular-route.js":108,"./../vendor/angular/angular.js":109,"./config/Log":96,"./config/Route":97,"./controllers/DataBindingController":98,"./controllers/DiController":99,"./controllers/FrameworkController":100,"./controllers/FrontMvcController":101,"./controllers/MainController":102,"./controllers/PageController":103,"./controllers/ProsConsController":104,"./controllers/ServiceController":105,"./controllers/SpaController":106,"./directives/snippet":107}],96:[function(require,module,exports){
 'use strict';
 
 var Log = function($logProvider) {
@@ -7912,35 +7919,43 @@ var Route = function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: templateDir + 'main.html',
-            controller: 'MainController'
+            controller: 'MainController',
+            pageIndex: 0
         })
         .when('/front-mvc', {
             templateUrl: templateDir + 'front-mvc.html',
-            controller: 'FrontMvcController'
+            controller: 'FrontMvcController',
+            pageIndex: 1
         })
         .when('/spa', {
             templateUrl: templateDir + 'spa.html',
-            controller: 'SpaController'
+            controller: 'SpaController',
+            pageIndex: 2
         })
         .when('/framework', {
             templateUrl: templateDir + 'framework.html',
-            controller: 'FrameworkController'
+            controller: 'FrameworkController',
+            pageIndex: 3
         })
         .when('/pros-n-cons', {
             templateUrl: templateDir + 'pros-n-cons.html',
-            controller: 'ProsConsController'
+            controller: 'ProsConsController',
+            pageIndex: 4
         })
         .when('/data-binding', {
             templateUrl: templateDir + 'data-binding.html',
-            controller: 'DataBindingController'
+            controller: 'DataBindingController',
+            pageIndex: 5
         })
         .when('/service', {
             templateUrl: templateDir + 'service.html',
-            controller: 'ServiceController'
+            controller: 'ServiceController',
+            pageIndex: 6
         })
         .when('/di', {
             templateUrl: templateDir + 'di.html',
-            controller: 'DiController'
+            controller: 'DiController',
+            pageIndex: 7
         })
         .otherwise({ redirectTo: '/' });
 
@@ -7964,7 +7979,7 @@ var DataBindingController = function($log, $scope) {
 };
 
 module.exports = [ '$log', '$scope', DataBindingController ];
-},{"./../../vendor/mousetrap/mousetrap.js":108,"highlight.js":2}],99:[function(require,module,exports){
+},{"./../../vendor/mousetrap/mousetrap.js":110,"highlight.js":2}],99:[function(require,module,exports){
 'use strict';
 
 var mousetrap = require("./../../vendor/mousetrap/mousetrap.js");
@@ -7975,7 +7990,7 @@ var DiController = function($log) {
 };
 
 module.exports = [ '$log', DiController ];
-},{"./../../vendor/mousetrap/mousetrap.js":108}],100:[function(require,module,exports){
+},{"./../../vendor/mousetrap/mousetrap.js":110}],100:[function(require,module,exports){
 'use strict';
 
 var mousetrap = require("./../../vendor/mousetrap/mousetrap.js");
@@ -7986,7 +8001,7 @@ var FrameworkController = function($log) {
 };
 
 module.exports = [ '$log', FrameworkController ];
-},{"./../../vendor/mousetrap/mousetrap.js":108}],101:[function(require,module,exports){
+},{"./../../vendor/mousetrap/mousetrap.js":110}],101:[function(require,module,exports){
 'use strict';
 
 var mousetrap = require("./../../vendor/mousetrap/mousetrap.js");
@@ -7997,7 +8012,7 @@ var FrontMvcController = function($log) {
 };
 
 module.exports = [ '$log', FrontMvcController ];
-},{"./../../vendor/mousetrap/mousetrap.js":108}],102:[function(require,module,exports){
+},{"./../../vendor/mousetrap/mousetrap.js":110}],102:[function(require,module,exports){
 'use strict';
 
 var mousetrap = require("./../../vendor/mousetrap/mousetrap.js");
@@ -8008,7 +8023,30 @@ var MainController = function($log) {
 };
 
 module.exports = [ '$log', MainController ];
-},{"./../../vendor/mousetrap/mousetrap.js":108}],103:[function(require,module,exports){
+},{"./../../vendor/mousetrap/mousetrap.js":110}],103:[function(require,module,exports){
+'use strict';
+
+var mousetrap = require("./../../vendor/mousetrap/mousetrap.js");
+
+var PageController = function($log, $route, $location) {
+
+    var
+    toPrevPage = function() {
+
+        console.log('toPrevPage');
+    },
+    toNextPage = function() {
+
+        console.log('toNextPage');
+    };
+
+
+    mousetrap.bind(',', toPrevPage);
+    mousetrap.bind('.', toNextPage);
+};
+
+module.exports = [ '$log', '$route', '$location', PageController ];
+},{"./../../vendor/mousetrap/mousetrap.js":110}],104:[function(require,module,exports){
 'use strict';
 
 var mousetrap = require("./../../vendor/mousetrap/mousetrap.js");
@@ -8019,7 +8057,7 @@ var ProsConsController = function($log) {
 };
 
 module.exports = [ '$log', ProsConsController ];
-},{"./../../vendor/mousetrap/mousetrap.js":108}],104:[function(require,module,exports){
+},{"./../../vendor/mousetrap/mousetrap.js":110}],105:[function(require,module,exports){
 'use strict';
 
 var mousetrap = require("./../../vendor/mousetrap/mousetrap.js");
@@ -8030,7 +8068,7 @@ var ServiceController = function($log) {
 };
 
 module.exports = [ '$log', ServiceController ];
-},{"./../../vendor/mousetrap/mousetrap.js":108}],105:[function(require,module,exports){
+},{"./../../vendor/mousetrap/mousetrap.js":110}],106:[function(require,module,exports){
 'use strict';
 
 var hljs = require('highlight.js');
@@ -8043,7 +8081,27 @@ var SpaController = function($log) {
 };
 
 module.exports = [ '$log', SpaController ];
-},{"./../../vendor/mousetrap/mousetrap.js":108,"highlight.js":2}],106:[function(require,module,exports){
+},{"./../../vendor/mousetrap/mousetrap.js":110,"highlight.js":2}],107:[function(require,module,exports){
+'use strict';
+
+var hljs = require('highlight.js');
+
+var snippet = function ($timeout, $interpolate) {
+
+    return {
+        restrict: 'E',
+        template: '<pre><code ng-transclude></code></pre>',
+        replace: true,
+        transclude: true,
+        link: function (scope, elm) {
+            var tmp = $interpolate(elm.find('code').text())(scope);
+            elm.find('code').html(hljs.highlightAuto(tmp).value);
+        }
+    };
+};
+
+module.exports = [ '$timeout', '$interpolate', snippet ];
+},{"highlight.js":2}],108:[function(require,module,exports){
 /**
  * @license AngularJS v1.2.23
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -8970,7 +9028,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],107:[function(require,module,exports){
+},{}],109:[function(require,module,exports){
 /**
  * @license AngularJS v1.2.23
  * (c) 2010-2014 Google, Inc. http://angularjs.org
@@ -30925,7 +30983,7 @@ var styleDirective = valueFn({
 })(window, document);
 
 !window.angular.$$csp() && window.angular.element(document).find('head').prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>');
-},{}],108:[function(require,module,exports){
+},{}],110:[function(require,module,exports){
 /*global define:false */
 /**
  * Copyright 2013 Craig Campbell
