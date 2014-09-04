@@ -8026,7 +8026,7 @@ module.exports = [ '$log', MainController ];
 },{"./../../vendor/mousetrap/mousetrap.js":110}],103:[function(require,module,exports){
 'use strict';
 
-var mousetrap = require("./../../vendor/mousetrap/mousetrap.js");
+require("./../../vendor/mousetrap/mousetrap.js");
 
 var PageController = function($log, $route, $location) {
 
