@@ -8041,8 +8041,8 @@ var PageController = function($log, $route, $location) {
     };
 
 
-    mousetrap.bind(',', toPrevPage);
-    mousetrap.bind('.', toNextPage);
+    Mousetrap.bind(',', toPrevPage);
+    Mousetrap.bind('.', toNextPage);
 };
 
 module.exports = [ '$log', '$route', '$location', PageController ];
