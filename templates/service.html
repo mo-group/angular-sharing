@@ -1,1 +1,48 @@
-<h2>Angular Service</h2>
+<h2>Angular Provider</h2>
+
+<h4>種類</h4>
+<img src="images/service.png" alt="">
+
+<h4>Factory</h4>
+<p>工廠模式</p>
+<snippet>
+myApp.factory('unicornLauncher', ["apiToken", function(apiToken) {
+    return new UnicornLauncher(apiToken);
+}]);
+</snippet>
+
+<h4>Service</h4>
+<p>單體模式</p>
+<snippet>
+myApp.service('unicornLauncher', ["apiToken", UnicornLauncher]);
+</snippet>
+
+<h4>Value</h4>
+<snippet>
+myApp.value('clientId', 'a12345654321x');
+</snippet>
+
+<h4>Constant</h4>
+<snippet>
+myApp.constant('planetName', 'Greasy Giant');
+</snippet>
+
+<h4>Provider</h4>
+<snippet>
+myApp.provider('unicornLauncher', function UnicornLauncherProvider() {
+    var useTinfoilShielding = false;
+
+    this.useTinfoilShielding = function(value) {
+        useTinfoilShielding = !!value;
+    };
+
+    this.$get = ["apiToken", function unicornLauncherFactory(apiToken) {
+
+        // let's assume that the UnicornLauncher constructor was also changed to
+        // accept and use the useTinfoilShielding argument
+        return new UnicornLauncher(apiToken, useTinfoilShielding);
+    }];
+});
+</snippet>
+<a href="#/module">Prev</a>
+<a href="#/template">Next</a>

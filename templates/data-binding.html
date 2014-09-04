@@ -4,7 +4,7 @@
 <input type="text" ng-model="number">
 
 <snippet>
-&lt;h3&gt;{{{ name || '誰' }}} 吃了 {{{ number || '?' }}} 個肉包&lt;/h3&gt;
+&lt;h3&gt;{{ '{' + '{' + "name || '誰'" + '}' + '}' }} 吃了 {{ '{' + '{' + "number || '?'" + '}' + '}' }} 個肉包&lt;/h3&gt;
 &lt;input type="text" ng-model="name"&gt;
 &lt;input type="text" ng-model="number"&gt;
 </snippet>
@@ -15,3 +15,5 @@
 
 <h4>雙向資料綁定</h4>
 <img src="images/data-bind-2.png" alt="">
+<a href="#/pros-n-cons">Prev</a>
+<a href="#/dirty-check">Next</a>

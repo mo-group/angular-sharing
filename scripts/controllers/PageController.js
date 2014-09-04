@@ -7,16 +7,16 @@ var PageController = function($log, $route, $location) {
     var
     toPrevPage = function() {
 
-        console.log('toPrevPage');
+        $log.info('toPrevPage');
     },
     toNextPage = function() {
 
-        console.log('toNextPage');
+        $log.info('toNextPage');
     };
 
 
-    Mousetrap.bind(',', toPrevPage);
-    Mousetrap.bind('.', toNextPage);
+    Mousetrap.bind('left ', toPrevPage);
+    Mousetrap.bind('right', toNextPage);
 };
 
 module.exports = [ '$log', '$route', '$location', PageController ];

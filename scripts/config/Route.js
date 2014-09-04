@@ -35,15 +35,27 @@ var Route = function($routeProvider, $locationProvider) {
             controller: 'DataBindingController',
             pageIndex: 5
         })
-        .when('/service', {
-            templateUrl: templateDir + 'service.html',
-            controller: 'ServiceController',
+        .when('/dirty-check', {
+            templateUrl: templateDir + 'dirty-check.html',
             pageIndex: 6
         })
         .when('/di', {
             templateUrl: templateDir + 'di.html',
             controller: 'DiController',
             pageIndex: 7
+        })
+        .when('/module', {
+            templateUrl: templateDir + 'module.html',
+            pageIndex: 8
+        })
+        .when('/service', {
+            templateUrl: templateDir + 'service.html',
+            controller: 'ServiceController',
+            pageIndex: 9
+        })
+        .when('/template', {
+            templateUrl: templateDir + 'template.html',
+            pageIndex: 10
         })
         .otherwise({ redirectTo: '/' });
 
