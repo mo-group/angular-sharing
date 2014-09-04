@@ -1,6 +1,6 @@
 'use strict';
 
-var mousetrap = require('mousetrap');
+require('mousetrap');
 
 var PageController = function($log, $route, $location) {
 
