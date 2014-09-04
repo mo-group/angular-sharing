@@ -15,7 +15,7 @@ var PageController = function($log, $route, $location) {
     };
 
 
-    Mousetrap.bind('left ', toPrevPage);
+    Mousetrap.bind('left' , toPrevPage);
     Mousetrap.bind('right', toNextPage);
 };
 
